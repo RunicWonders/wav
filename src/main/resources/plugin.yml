@@ -1,0 +1,19 @@
+name: WorldAliasVariables
+version: 1.0.0
+main: cn.ningmo.WorldAliasVariables
+api-version: '1.21'
+author: 柠枺
+depend: [PlaceholderAPI]
+description: 为你的世界设置任何别名且以占位符的形式应用在其他地方。 
+
+commands:
+  wav:
+    description: 世界别名变量插件主命令
+    usage: /<command> [reload|set|list]
+    permission: wav.admin
+    permission-message: §c你没有权限使用此命令!
+
+permissions:
+  wav.admin:
+    description: 允许使用所有世界别名变量插件命令
+    default: op 

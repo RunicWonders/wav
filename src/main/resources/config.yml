@@ -1,0 +1,18 @@
+#-------------------
+#     +wav配置文件+
+#     作者:柠枺
+#-------------------
+#提示
+#变量占位符为%wav_<world>%
+#是否开启调试日志
+debug: false
+
+#已应用的世界
+world:
+  - world
+  - world_end
+
+#世界别名
+world_alias_variables:
+  world: "&a主世界"
+  world_end: "&s末地" 
