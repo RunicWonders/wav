@@ -29,6 +29,16 @@ public class WorldAliasPlaceholder extends PlaceholderExpansion {
     }
 
     @Override
+    public boolean canRegister() {
+        return true;
+    }
+
+    @Override
+    public boolean persist() {
+        return true;
+    }
+
+    @Override
     public String onRequest(OfflinePlayer offlinePlayer, String identifier) {
         // 如果玩家不在线且请求的不是特定世界名，返回空
         if (!identifier.contains("_") && !(offlinePlayer instanceof Player)) {
