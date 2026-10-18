@@ -1,9 +1,9 @@
 package cn.ningmo;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 public class WorldAliasPlaceholder extends PlaceholderExpansion {
 
@@ -14,18 +14,18 @@ public class WorldAliasPlaceholder extends PlaceholderExpansion {
     }
 
     @Override
-    public String getIdentifier() {
+    public @NotNull String getIdentifier() {
         return "wav";
     }
 
     @Override
-    public String getAuthor() {
+    public @NotNull String getAuthor() {
         return "柠枺";
     }
 
     @Override
-    public String getVersion() {
-        return "1.0.0";
+    public @NotNull String getVersion() {
+        return "1.0.2";
     }
 
     @Override
@@ -39,20 +39,17 @@ public class WorldAliasPlaceholder extends PlaceholderExpansion {
     }
 
     @Override
-    public String onRequest(OfflinePlayer offlinePlayer, String identifier) {
-        // 如果玩家不在线且请求的不是特定世界名，返回空
-        if (!identifier.contains("_") && !(offlinePlayer instanceof Player)) {
-            return "";
-        }
-
+    public String onPlaceholderRequest(Player player, @NotNull String identifier) {
         String worldName;
         // 检查是否是直接请求特定世界的别名
-        if (identifier.contains("_")) {
-            // 移除前缀 "world_" 得到世界名
+        if (!identifier.isEmpty()) {
+            // 已经移除了前缀 "wav_" 直接就是世界名
             worldName = identifier;
         } else {
             // 获取玩家当前世界名
-            Player player = (Player) offlinePlayer;
+            if (player == null) {
+                return ""; // 如果玩家不在线且请求的不是特定世界名，返回空
+            }
             worldName = player.getWorld().getName();
         }
 

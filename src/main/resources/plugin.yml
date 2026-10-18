@@ -1,7 +1,7 @@
 name: WorldAliasVariables
-version: 1.0.1
+version: '${version}'
 main: cn.ningmo.WorldAliasVariables
-api-version: '1.21'
+api-version: '1.20'
 author: 柠枺
 depend: [PlaceholderAPI]
 description: 为你的世界设置任何别名且以占位符的形式应用在其他地方。 

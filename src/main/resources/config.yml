@@ -6,18 +6,11 @@
 #提示
 #变量占位符为
 #%wav%     显示玩家当前世界的别名
+#注：PAPI 2.12.3 起强制要求占位符带下划线，可以改用 %wav_%
 #%wav_<world>% 显示指定世界的别名 
 
 #是否开启调试日志
 debug: false
-
-#已应用的世界
-#世界名必须与world_alias_variables中的世界名一致  
-#更改此配置文件后需要重启服务器 
-world:
-  - world
-  - world_the_end
-  - world_nether
 
 #世界别名
 world_alias_variables:
